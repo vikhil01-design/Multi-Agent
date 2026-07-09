@@ -1954,7 +1954,6 @@ requires-dist = [
     { name = "langgraph", specifier = "==1.0.0" },
     { name = "python-dotenv", specifier = "==1.1.1" },
     { name = "tokenizers", specifier = ">=0.21.2" },
-    { name = "uvicorn", extras = ["standard"] },
     { name = "uvicorn", extras = ["standard"], specifier = "==0.38.0" },
 ]
 
