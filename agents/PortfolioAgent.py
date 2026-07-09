@@ -1,11 +1,7 @@
 from crewai import Agent
-from llm import _create_llm
 
 
 def portfolioAgent(llm) -> Agent:
-
-    if llm is None:
-        llm = _create_llm()
 
     portfolio_agent = Agent(
         role="Portfolio Optimization Agent",

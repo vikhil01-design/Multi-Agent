@@ -1,11 +1,8 @@
 from crewai import Agent
-from llm import _create_llm
 
 
 def MarketAgent(llm) -> Agent:
     """Create a Market Analysis Agent for the investment crew."""
-    if llm is None:
-        llm = _create_llm()
 
     market_agent = Agent(
         role="Market Analysis Agent",

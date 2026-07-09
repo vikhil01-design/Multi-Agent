@@ -29,4 +29,5 @@ def _create_llm() -> LLM:
         api_key=azure_api_key,
         api_version=azure_api_version,
         temperature=0.7,
+        extra_body={"prompt_cache_key": "investment-strategy-cache"},
     )

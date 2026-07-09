@@ -1,6 +1,7 @@
 import logging
 import time
 import os
+import uuid
 from fastapi import FastAPI, Query
 from dotenv import load_dotenv
 from langchain_core.messages import HumanMessage
@@ -8,6 +9,8 @@ from graph import build_graph
 from guardrails import guardrail_check
 import asyncio
 import uvicorn
+from langfuse.langchain import CallbackHandler
+from langfuse import get_client
 
 # Configure logging
 logging.basicConfig(
@@ -18,7 +21,17 @@ logging.basicConfig(
 
 logger = logging.getLogger(__name__)
 
-app = FastAPI()
+app = FastAPI(
+    title="Autonomous Investment Strategy Board",
+    description="An autonomous system for generating and reviewing investment strategies based on user requests.",
+    version="1.0.0",
+)
+
+langfuse_client = get_client()
+if langfuse_client.auth_check():
+    logger.info("Langfuse tracking authenticated successfully.")
+else:
+    logger.error("Langfuse authentication failed. Verify keys in .env file.")
 
 
 @app.post("/research")
@@ -62,14 +75,17 @@ async def research(query: str = Query(..., description="Research query")):
 
     logger.info("MAIN: Starting graph execution...")
     try:
+
+        trace_id = uuid.uuid4().hex
+        handler = CallbackHandler(trace_context={"trace_id": trace_id})
+
         result = await asyncio.wait_for(
             asyncio.to_thread(
-                graph.invoke,
-                state,
-                {"recursion_limit": 30},
+                graph.invoke, state, {"recursion_limit": 30, "callbacks": [handler]}
             ),
             timeout=timeout_seconds,
         )
+        langfuse_client.flush()
         elapsed_time = time.time() - start_time
         logger.info(
             f"MAIN: Graph execution completed successfully in {elapsed_time:.2f} seconds"
@@ -122,8 +138,7 @@ async def research(query: str = Query(..., description="Research query")):
 
 
 if __name__ == "__main__":
-    port = int(os.getenv("PORT", 8000))
-    uvicorn.run("main:app", host="0.0.0.0", port=port)
+    uvicorn.run("main:app", host="0.0.0.0", port=8000)
 
 
 # def main():

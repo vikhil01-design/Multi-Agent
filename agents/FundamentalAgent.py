@@ -1,11 +1,8 @@
 from crewai import Agent
-from llm import _create_llm
 
 
 def fundamentalAgent(llm) -> Agent:
     """Create a Fundamental Analysis Agent for the investment crew."""
-    if llm is None:
-        llm = _create_llm()
 
     fundamental_agent = Agent(
         role="Fundamental Analysis Agent",
