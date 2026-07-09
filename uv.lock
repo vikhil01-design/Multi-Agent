@@ -148,18 +148,6 @@ wheels = [
 ]
 
 [[package]]
-name = "aiosqlite"
-version = "0.21.0"
-source = { registry = "https://pypi.org/simple" }
-dependencies = [
-    { name = "typing-extensions" },
-]
-sdist = { url = "https://files.pythonhosted.org/packages/13/7d/8bca2bf9a247c2c5dfeec1d7a5f40db6518f88d314b8bca9da29670d2671/aiosqlite-0.21.0.tar.gz", hash = "sha256:131bb8056daa3bc875608c631c678cda73922a2d4ba8aec373b19f18c17e7aa3", size = 13454, upload-time = "2025-02-03T07:30:16.235Z" }
-wheels = [
-    { url = "https://files.pythonhosted.org/packages/f5/10/6c25ed6de94c49f88a91fa5018cb4c0f3625f31d5be9f771ebe5cc7cd506/aiosqlite-0.21.0-py3-none-any.whl", hash = "sha256:2549cf4057f95f53dcba16f2b64e8e2791d7e1adedb13197dd8ed77bb226d7d0", size = 15792, upload-time = "2025-02-03T07:30:13.6Z" },
-]
-
-[[package]]
 name = "annotated-doc"
 version = "0.0.4"
 source = { registry = "https://pypi.org/simple" }
@@ -584,10 +572,9 @@ wheels = [
 
 [[package]]
 name = "crewai"
-version = "1.7.0"
+version = "1.6.0"
 source = { registry = "https://pypi.org/simple" }
 dependencies = [
-    { name = "aiosqlite" },
     { name = "appdirs" },
     { name = "chromadb" },
     { name = "click" },
@@ -613,9 +600,9 @@ dependencies = [
     { name = "tomli-w" },
     { name = "uv" },
 ]
-sdist = { url = "https://files.pythonhosted.org/packages/58/d8/cb5ac42f5b21248dae967d830b447e42adf0d59dea7b5777e663d16cc2ba/crewai-1.7.0.tar.gz", hash = "sha256:f43a0e94a83b6e11de008bba7fee871a7f0e3221f438b6a9b492a00efb978b20", size = 4024076, upload-time = "2025-12-09T00:43:23.885Z" }
+sdist = { url = "https://files.pythonhosted.org/packages/50/96/4745391a9562ef03d9594f08c150ef48c30381cdcfa75eb61105c62d36d2/crewai-1.6.0.tar.gz", hash = "sha256:1d697cced60b045013573f9179c424782986caf7944c1aedbc8f3e9d7c09362d", size = 4176606, upload-time = "2025-11-25T01:58:23.039Z" }
 wheels = [
-    { url = "https://files.pythonhosted.org/packages/6f/de/89e5a13976c08f8b78c7a1d45d603601c6e713471d2c261ba364e6bcd316/crewai-1.7.0-py3-none-any.whl", hash = "sha256:cc09d9b3cbef436ae0f8169e2b174a1e9ce2841d3c0553f684eb5f1e88eaf0d1", size = 665249, upload-time = "2025-12-09T00:43:21.787Z" },
+    { url = "https://files.pythonhosted.org/packages/23/6d/915bd2ae3bcad57141c70a9e885f127a4f01b854e65f2dba4a14d2bc7843/crewai-1.6.0-py3-none-any.whl", hash = "sha256:bed4ee6df505d7d85055e039039201e7ce8721eae40176258cfbdc76aef5ecf3", size = 641789, upload-time = "2025-11-25T01:58:21.484Z" },
 ]
 
 [package.optional-dependencies]
@@ -1228,11 +1215,11 @@ wheels = [
 
 [[package]]
 name = "json-repair"
-version = "0.25.3"
+version = "0.25.2"
 source = { registry = "https://pypi.org/simple" }
-sdist = { url = "https://files.pythonhosted.org/packages/7c/60/484ee009c1867ddc5ffe0ff2131b82e80bbf13fdb59f3d93834f98e56a9f/json_repair-0.25.3.tar.gz", hash = "sha256:4ee970581a05b0b258b749eb8bcac21de380edda97c3717a4edfafc519ec21a4", size = 20619, upload-time = "2024-07-10T13:42:18.977Z" }
+sdist = { url = "https://files.pythonhosted.org/packages/66/cb/50b0bbc3e504ef875aea0062cdc108077e4923fb8c1209c70c80dc043933/json_repair-0.25.2.tar.gz", hash = "sha256:161a56d7e6bbfd4cad3a614087e3e0dbd0e10d402dd20dc7db418432428cb32b", size = 20458, upload-time = "2024-06-27T16:26:15.492Z" }
 wheels = [
-    { url = "https://files.pythonhosted.org/packages/f0/9e/2ab68cc0ff030e1ef78329d7b933473d3ad2c7d0e66aede6a7c87f74753c/json_repair-0.25.3-py3-none-any.whl", hash = "sha256:f00b510dd21b31ebe72581bdb07e66381df2883d6f640c89605e482882c12b17", size = 12812, upload-time = "2024-07-10T13:42:16.918Z" },
+    { url = "https://files.pythonhosted.org/packages/aa/43/ac6691c7b5aa7191c964a04ae926d2bb06d9297dba1f2287df5b85cb3715/json_repair-0.25.2-py3-none-any.whl", hash = "sha256:51d67295c3184b6c41a3572689661c6128cef6cfc9fb04db63130709adfc5bf0", size = 12740, upload-time = "2024-06-27T16:26:13.823Z" },
 ]
 
 [[package]]
@@ -2424,7 +2411,7 @@ dependencies = [
 
 [package.metadata]
 requires-dist = [
-    { name = "crewai", specifier = "==1.7.0" },
+    { name = "crewai", specifier = "==1.6.0" },
     { name = "crewai", extras = ["azure-ai-inference"] },
     { name = "fastapi", specifier = "==0.121.0" },
     { name = "langfuse", specifier = ">=4.7.1" },
