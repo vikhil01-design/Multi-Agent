@@ -9,8 +9,8 @@ dependencies = [
     "uvicorn[standard]==0.38.0",
     "langgraph==1.0.0",
     "python-dotenv==1.1.1",
-    "crewai==1.8.1",
+    "crewai==1.4.0",
     "crewai[azure-ai-inference]",
     "langfuse>=4.7.1",
+    "tokenizers>=0.21.2",
 ]
-
