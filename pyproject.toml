@@ -3,15 +3,22 @@ name = "project-3-autonomous-investment-strategy-board"
 version = "0.1.0"
 description = "Add your description here"
 readme = "README.md"
-requires-python = ">=3.13"
+requires-python = ">=3.12"
 dependencies = [
     "fastapi==0.121.0",
-    "uvicorn[standard]==0.38.0",
+    "uvicorn==0.38.0",
     "langgraph==1.0.0",
     "python-dotenv==1.1.1",
-    "crewai==1.4.0",
-    "crewai[azure-ai-inference]",
+    "crewai[azure-ai-inference]==1.8.1",
     "langfuse>=4.7.1",
-    "tokenizers>=0.21.2",
-    "pydantic-core==2.33.2",
+    "langchain>=0.3.0",
+    "openai>=1.0.0",
+    "langchain-core>=0.3.0",
 ]
+
+[build-system]
+requires = ["setuptools>=69", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[tool.setuptools]
+packages = ["agents", "nodes"]

@@ -1,11 +1,8 @@
 from crewai import Agent
-from llm import _create_llm
 
 
 def riskAgent(llm) -> Agent:
     """Create a Risk Assessment Agent for the investment crew."""
-    if llm is None:
-        llm = _create_llm()
 
     risk_agent = Agent(
         role="Risk Assessment Agent",
