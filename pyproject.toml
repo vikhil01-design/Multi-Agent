@@ -14,5 +14,3 @@ dependencies = [
     "langfuse>=4.7.1",
 ]
 
-[tool.uv.overrides]
-tokenizers = "0.21.2"
